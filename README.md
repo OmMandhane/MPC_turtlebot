@@ -40,8 +40,6 @@ If the reviewers ask you how your code works under the hood, here is the technic
 The goal of this node is to convert raw, jagged waypoints into a perfectly smooth mathematical curve  . 
 
 *   **The Problem:** The MPC solver calculates derivatives (gradients). If the path has sharp corners, the gradient explodes to infinity, and the solver crashes.
-*   **The Math:** We use SciPy's `splprep` to fit a parametric cubic B-spline to the waypoints  . A parametric curve means both $x$ and $y$ are functions of a localized variable $u$ (from 0.0 to 1.0):
-    $$S(u) = \begin{bmatrix} x(u) \\ y(u) \end{bmatrix}$$
 *   **Heading Extraction:** Instead of using geometry between two points to find the robot's target heading (which can be noisy), we use exact calculus. We ask the B-spline for its first derivative (`splev(..., der=1)`) to get the tangent vectors $dx$ and $dy$  . The target heading ($\psi$) is simply:
     $$\psi = \arctan\left(\frac{dy}{dx}\right)$$
 
