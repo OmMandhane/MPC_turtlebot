@@ -10,11 +10,10 @@ The navigation stack consists of two primary custom nodes:
    * **Monotonic Progress Tracking**: Prevents path-jumping at sharp U-turns.
    * **Inverse Barrier Functions**: Creates dynamic repelling fields around LiDAR-detected obstacle surfaces.
    * **Cruise Control Cost**: Forces forward progression to prevent local minimum stalling.
-   * **Cosine Heading Cost**: Solves the $\pm \pi$ angle-wrapping singularity.
 
 ## Usage
 
-Launch the simulation environment, followed by the path generator and the MPC tracker. **Note:** It is critical to pass the `use_sim_time` parameter to the MPC node to prevent TF2 extrapolation errors and ensure the solver syncs perfectly with the Gazebo clock.
+Launch the simulation environment, followed by the path generator and the MPC tracker.
 
 **Terminal 1: Bring up the Simulation**
 ```bash
