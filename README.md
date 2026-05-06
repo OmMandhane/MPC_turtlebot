@@ -1,4 +1,4 @@
-# Nav2 MPC Tracker with Dynamic Obstacle Avoidance
+# MPC Tracker with Dynamic Obstacle Avoidance
 
 This repository contains a custom local planner for ROS 2, implementing Model Predictive Control (MPC) with a B-Spline path smoother. The system is designed to handle complex navigation scenarios, including dynamic obstacle avoidance and tight hairpin turns, using mathematically continuous cost functions.
 
